@@ -29,6 +29,7 @@ public class CustomerServiceImpl implements CustomerService {
      */
     @Override
     public CustomerDto saveNewCustomer(CustomerDto customerDto) {
+        log.info("Saving new Customer with Details: [{}]", customerDto);
         return CustomerDto.builder()
                 .id(UUID.randomUUID())
                 .name(customerDto.getName())
@@ -41,7 +42,7 @@ public class CustomerServiceImpl implements CustomerService {
      */
     @Override
     public void updateCustomer(UUID customerId, CustomerDto customerDto) {
-        log.info("Updating customer.....");
+        log.info("Updating customer [{}] with: [{}]", customerId, customerDto);
     }
 
     /**
@@ -49,6 +50,6 @@ public class CustomerServiceImpl implements CustomerService {
      */
     @Override
     public void deleteById(UUID customerId) {
-        log.info("Deleting customer....");
+        log.info("Deleting customer.... [{}]", customerId);
     }
 }
