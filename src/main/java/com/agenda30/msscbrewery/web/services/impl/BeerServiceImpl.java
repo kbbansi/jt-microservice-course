@@ -1,6 +1,7 @@
 package com.agenda30.msscbrewery.web.services.impl;
 
 import com.agenda30.msscbrewery.web.model.BeerDto;
+import com.agenda30.msscbrewery.web.model.BeerStyleEnum;
 import com.agenda30.msscbrewery.web.services.BeerService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -21,7 +22,7 @@ public class BeerServiceImpl implements BeerService {
         return BeerDto.builder()
                 .beerName("Club Beer")
                 .id(UUID.randomUUID())
-                .beerStyle("Pale Ale")
+                .beerStyle(BeerStyleEnum.ALE)
                 .build();
     }
 
