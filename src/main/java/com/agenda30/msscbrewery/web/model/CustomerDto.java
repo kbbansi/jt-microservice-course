@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.UUID;
 
 @Data
@@ -18,7 +19,6 @@ public class CustomerDto {
     private UUID id;
 
     @NotNull
-    @Min(value = 3, message = "Customer name should be more than 3 characters long")
-    @Max(value = 10, message = "Customer name should not be more than 10 characters long")
+    @Size(min = 3, max = 100, message = "customer name should be between 3 to 100 characters")
     private String name;
 }
