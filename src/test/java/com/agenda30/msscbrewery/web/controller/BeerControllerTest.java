@@ -2,6 +2,7 @@ package com.agenda30.msscbrewery.web.controller;
 
 
 import com.agenda30.msscbrewery.web.model.BeerDto;
+import com.agenda30.msscbrewery.web.model.BeerStyleEnum;
 import com.agenda30.msscbrewery.web.services.BeerService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -41,7 +42,7 @@ class BeerControllerTest {
         validBeer = BeerDto.builder()
                 .id(UUID.randomUUID())
                 .beerName("Beer1")
-                .beerStyle("PALE_ALE")
+                .beerStyle(BeerStyleEnum.ALE)
                 .upc(123456789012L)
                 .build();
     }
